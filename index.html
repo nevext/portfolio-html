@@ -1,0 +1,2630 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dave | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0d0d0d;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #0d0d0d;
+      border-bottom: 1px solid #1a1a1a;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      font-size: 1.6em;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .logo .neon {
+      color: #00ffd5 !important;
+      text-shadow: 0 0 8px #00ffd5, 0 0 16px #00ffd5, 0 0 32px #00ffd5 !important;
+    }
+
+    .logo .neon {
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      margin-left: 22px;
+      padding: 6px 2px;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fff !important;
+    }
+
+    .nav-links a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: #fff !important;
+      box-shadow: 0 0 6px #fff !important;
+    }
+
+    .container {
+      min-height: 100vh;
+      max-width: 1200px;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+      flex: 1;
+      padding-top: 64px;
+      padding-bottom: 120px;
+      box-sizing: border-box;
+    }
+
+    #david {
+      margin-top: 120px;
+    }
+
+    .text {
+      flex: 1.2;
+      padding-right: 60px;
+    }
+
+    .intro {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .intro span {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+      font-weight: bold;
+    }
+
+    .typing {
+      font-size: 3.5em;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .typing span {
+      color: #fff;
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
+    }
+
+    .bio {
+      margin-top: 14px;
+      max-width: 650px;
+      line-height: 1.6;
+      color: #cfcfcf;
+      font-size: 1.05em;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    .bio strong {
+      color: #fff;
+      text-shadow: 0 0 8px #fff;
+      font-weight: 600;
+    }
+
+    .bio .letter {
+      display: inline-block;
+      transition: transform 0.18s ease;
+      will-change: transform;
+      transform-origin: center bottom;
+    }
+
+    .word {
+      display: inline-block;
+      white-space: nowrap;
+      margin-right: 0.25em;
+    }
+
+    .bio .letter:hover {
+      transform: scale(1.25);
+    }
+
+    .bio .neon-phrase,
+    .bio .neon-phrase .letter {
+      color: #fff;
+      text-shadow: 0 0 8px #fff, 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.35);
+      font-weight: 600;
+    }
+
+    .about-text .letter {
+      display: inline-block;
+      transition: transform 0.18s ease;
+      will-change: transform;
+      transform-origin: center bottom;
+    }
+
+    .about-text .letter:hover {
+      transform: scale(1.25);
+    }
+
+    .neon-white,
+    .neon-white .letter {
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 24px rgba(255, 255, 255, 0.35);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .neon-white:hover,
+    .neon-white:hover .letter {
+      text-shadow: 0 0 10px #ffffff,
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 32px rgba(255, 255, 255, 0.55);
+    }
+
+    .actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      border: 1px solid #fff;
+      color: #0d0d0d;
+      background: #fff;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+      transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+      border-color: #fff !important;
+      background: #fff !important;
+      color: #0d0d0d !important;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 16px rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .btn-outline {
+      background: transparent !important;
+      color: #fff !important;
+      border-color: #fff !important;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: #fff !important;
+    }
+
+    .btn.locked,
+    .btn[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+      background: transparent;
+      color: #888;
+      border-color: #555;
+      box-shadow: none;
+    }
+
+    .read-more[disabled] {
+      opacity: 0.45;
+      pointer-events: none;
+      text-decoration: none;
+      cursor: not-allowed;
+    }
+
+    .unlock-anim {
+      animation: unlockPop .5s ease, neonPulse 1.6s ease-in-out 1;
+    }
+
+    @keyframes unlockPop {
+      0% {
+        transform: scale(0.96);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+
+      60% {
+        transform: scale(1.04);
+        box-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+      }
+
+      100% {
+        transform: scale(1.0);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    @keyframes neonPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+      }
+
+      50% {
+        box-shadow: 0 0 22px rgba(255, 255, 255, 0.55);
+      }
+    }
+
+    .option-unlocked {
+      animation: optionGlow 1s ease !important;
+      border-color: rgba(255, 255, 255, 0.65) !important;
+      box-shadow: 0 0 18px rgba(255, 255, 255, 0.25) !important;
+    }
+
+    @keyframes optionGlow {
+      0% {
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+
+      50% {
+        box-shadow: 0 0 22px rgba(255, 255, 255, 0.45);
+      }
+
+      100% {
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    .social {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, filter 0.25s ease;
+    }
+
+    .social img {
+      width: 32px;
+      height: 32px;
+      display: block;
+      filter: grayscale(100%);
+      transition: filter 0.25s ease, transform 0.25s ease;
+    }
+
+    .social a:hover img {
+      filter: grayscale(0%);
+      transform: scale(1.2);
+    }
+
+    .avatar {
+      flex: 0.8;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .avatar img {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff;
+      animation: float 4s ease-in-out infinite, pulse 2s infinite;
+      margin-top: 48px;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 15px #fff, 0 0 30px #fff;
+      }
+
+      50% {
+        box-shadow: 0 0 30px #fff, 0 0 60px #fff;
+      }
+
+      100% {
+        box-shadow: 0 0 15px #fff, 0 0 30px #fff;
+      }
+    }
+
+    .about {
+      width: 100%;
+      padding: 100px 0;
+      background: #0d0d0d;
+    }
+
+    .about-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 80px;
+      flex-wrap: wrap;
+    }
+
+    .about-avatar img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 20px #fff, 0 0 40px #fff;
+    }
+
+    .about-text {
+      flex: 1;
+      max-width: 850px;
+      color: #cfcfcf;
+    }
+
+    .about-text h2 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    .about-text h3 {
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .about-text p {
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .about-actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .services {
+      padding: 140px 0;
+      margin-top: 200px;
+      background: #0d0d0d;
+      color: #fff;
+      text-align: center;
+    }
+
+    .services-title {
+      font-size: 2.5em;
+      margin-bottom: 50px;
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 90%;
+    }
+
+    .service-card {
+      background: #111;
+      border-radius: 12px;
+      padding: 30px 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #fff !important;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .service-card .icon {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      color: #fff;
+      text-shadow: 0 0 8px #fff;
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.4em;
+      color: #fff;
+    }
+
+    .service-card p {
+      font-size: 0.95em;
+      color: #cfcfcf;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(4px);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #0d0d0d;
+      border: 1px solid #fff;
+      border-radius: 12px;
+      padding: 30px;
+      width: 90%;
+      max-width: 500px;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 20px;
+      color: #fff !important;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.35) !important;
+    }
+
+    .option {
+      margin-bottom: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: linear-gradient(180deg, #0f0f0f 0%, #121212 100%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+      box-shadow: 0 0 16px rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .option h3 {
+      color: #fff !important;
+      margin-bottom: 8px;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.35) !important;
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    .btn.neon {
+      background: transparent !important;
+      border: 1px solid #fff !important;
+      color: #fff !important;
+      padding: 10px 20px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .btn.neon:hover {
+      background: #fff !important;
+      color: #0d0d0d !important;
+      box-shadow: 0 0 12px #fff !important;
+    }
+
+    .read-more {
+      margin-top: 10px;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9em;
+      text-decoration: underline;
+    }
+
+    .more-info {
+      display: none;
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .projects {
+      margin-top: 220px;
+      padding: 120px 0;
+      background: #0d0d0d;
+      color: #fff;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .projects-title {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 92%;
+      align-items: start;
+    }
+
+    .project-card {
+      background: linear-gradient(180deg, #0f0f0f 0%, #121212 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 12px;
+      padding: 18px;
+      box-sizing: border-box;
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.04), 0 2px 6px rgba(0, 0, 0, 0.6);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.08), 0 6px 12px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .project-card .thumb {
+      width: 100%;
+      height: 140px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      color: #fff !important;
+      font-size: 2.4em;
+    }
+
+    .project-card h3 {
+      margin: 6px 0 8px;
+      color: #fff !important;
+      font-size: 1.1em;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.06);
+    }
+
+    .project-card p {
+      color: #cfcfcf;
+      font-size: 0.95em;
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+
+    .project-btn {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid #fff;
+      color: #fff !important;
+      background: transparent !important;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.04);
+      transition: background 0.18s ease, color 0.18s ease;
+    }
+
+    .project-btn:hover {
+      background: #fff !important;
+      color: #0d0d0d !important;
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.12) !important;
+    }
+
+    #certificates {
+      margin-top: 220px;
+      padding: 120px 0;
+      background: #0d0d0d;
+      color: #fff;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .certificates-title {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 92%;
+      align-items: start;
+    }
+
+    .certificate-card {
+      background: linear-gradient(180deg, #0f0f0f 0%, #121212 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 12px;
+      padding: 18px;
+      box-sizing: border-box;
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.04), 0 2px 6px rgba(0, 0, 0, 0.6);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .certificate-card .thumb {
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      color: #fff !important;
+      font-size: 1.8em;
+      background: rgba(255, 255, 255, 0.08) !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .certificate-card h4 {
+      margin: 6px 0 8px;
+      color: #fff;
+      font-size: 1.05em;
+    }
+
+    .certificate-card p {
+      color: #cfcfcf;
+      font-size: 0.95em;
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+
+    .certificate-card .status {
+      font-size: 0.9em;
+      color: #cfcfcf;
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    .progress {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin: 10px 0 6px;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 16.66%;
+      background: #fff;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+    }
+
+    #curiosidade {
+      margin-top: 320px;
+      padding: 120px 0;
+      background: #0d0d0d;
+      color: #fff;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .curiosity-title {
+      font-size: 2.2em;
+      margin-bottom: 32px;
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    .curiosity-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .curiosity-card {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      background: linear-gradient(180deg, #0f0f0f, #121212);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.04);
+      width: 100%;
+      max-width: 1100px;
+      box-sizing: border-box;
+      transition: opacity .32s ease, transform .32s ease;
+    }
+
+    .curiosity-card.invisible {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .curiosity-avatar {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .curiosity-avatar img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff;
+      transition: opacity 0.36s ease;
+      animation: float 4s ease-in-out infinite, pulse 2s infinite;
+    }
+
+    .curiosity-content {
+      flex: 1;
+      text-align: left;
+    }
+
+    .curiosity-content h4 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: 1.4em;
+    }
+
+    .curiosity-content h5 {
+      margin: 0 0 12px;
+      color: #cfcfcf;
+      font-size: 1em;
+      font-weight: 600;
+    }
+
+    .curiosity-content p {
+      margin: 0;
+      color: #cfcfcf;
+      line-height: 1.6;
+    }
+
+    .curiosity-controls {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+      justify-content: flex-start;
+    }
+
+    .curiosity-btn {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #fff;
+      color: #fff !important;
+      background: transparent !important;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease;
+    }
+
+    .curiosity-btn:hover {
+      background: #fff !important;
+      color: #0d0d0d !important;
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      border: 1px solid #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.18) !important;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .question {
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .question-title {
+      margin: 0 0 10px;
+      color: #fff !important;
+      font-weight: 600;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(255, 255, 255, 0.6), 0 0 24px rgba(255, 255, 255, 0.35) !important;
+    }
+
+    .question-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
+      min-height: 44px;
+      padding: 6px 0;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .toast-container {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      z-index: 2000;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.45) !important;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.25) !important;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: toast-in .22s ease forwards, toast-out .22s ease forwards 2.2s;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+    }
+
+    .toast--timid {
+      font-size: 0.85em;
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.25);
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.18);
+      animation: toast-in .18s ease forwards, toast-out .18s ease forwards 1.4s;
+    }
+
+    @keyframes toast-in {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes toast-out {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      to {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+    }
+
+    .music-player {
+      display: none;
+    }
+
+    .music-player.active {
+      display: block;
+    }
+
+    .music-card {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 320px;
+      background: linear-gradient(180deg, #0f0f0f, #121212);
+      border: 1px solid rgba(255, 255, 255, 0.25) !important;
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.12) !important;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto;
+      gap: 10px 12px;
+      z-index: 1500;
+    }
+
+    .music-info h3 {
+      margin: 0;
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+      font-size: 1.1em;
+    }
+
+    .music-info p {
+      margin: 0;
+      color: #cfcfcf;
+      font-size: 0.95em;
+    }
+
+    .music-controls {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .music-controls .btn {
+      padding: 8px 10px;
+      min-width: 0;
+    }
+
+    #videoModal .modal-content {
+      max-height: 80vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.45) rgba(255, 255, 255, 0.06);
+    }
+
+    #videoModal .modal-content::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    #videoModal .modal-content::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 10px;
+      border: 2px solid #0d0d0d;
+    }
+
+    #videoModal .modal-content::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+    }
+
+    #videoModal .option {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    #videoModal .option .btn,
+    #videoModal .option a.btn,
+    #videoModal .option .read-more {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    #videoModal .option .more-info {
+      margin-top: 10px;
+    }
+
+    .logo .neon,
+    .intro span,
+    .typing span,
+    .bio strong,
+    .bio .neon-phrase,
+    .bio .neon-phrase .letter,
+    .about-text h2,
+    .services-title,
+    .projects-title,
+    .certificates-title,
+    .project-card h3,
+    .certificate-card h4,
+    .music-info h3,
+    .curiosity-content h4 {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 24px rgba(255, 255, 255, 0.35) !important;
+    }
+
+    .nav-links a:hover {
+      color: #fff !important;
+    }
+
+    .nav-links a:hover::after {
+      background: #fff !important;
+      box-shadow: 0 0 6px #fff !important;
+    }
+
+    .read-more {
+      color: #fff !important;
+    }
+
+    .btn {
+      border-color: #fff !important;
+      background: #fff !important;
+      color: #0d0d0d !important;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 16px rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .btn-outline {
+      background: transparent !important;
+      color: #fff !important;
+      border-color: #fff !important;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12) !important;
+      color: #fff !important;
+    }
+
+    .btn.neon {
+      background: transparent !important;
+      border-color: #fff !important;
+      color: #fff !important;
+    }
+
+    .btn.neon:hover {
+      background: #fff !important;
+      color: #0d0d0d !important;
+      box-shadow: 0 0 12px #fff !important;
+    }
+
+    .modal-content,
+    .lantern-card,
+    .hover-lantern .card-back,
+    .project-btn,
+    .certificate-link,
+    .curiosity-btn,
+    .music-card {
+      border-color: rgba(255, 255, 255, 0.45) !important;
+    }
+
+    .project-btn,
+    .certificate-link,
+    .curiosity-btn {
+      color: #fff !important;
+      background: transparent !important;
+    }
+
+    .project-btn:hover,
+    .certificate-link:hover,
+    .curiosity-btn:hover {
+      background: #fff !important;
+      color: #0d0d0d !important;
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .service-card .icon,
+    .project-card .thumb,
+    .certificate-card .thumb {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.8) !important;
+    }
+
+    .project-card {
+      border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .certificate-card {
+      border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .hover-lantern .card-back {
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 60%) !important;
+    }
+
+    .avatar img,
+    .about-avatar img,
+    .curiosity-avatar img {
+      border-color: #fff !important;
+      box-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 60px #fff !important;
+    }
+
+    .toast {
+      border-color: rgba(255, 255, 255, 0.45) !important;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.25) !important;
+    }
+
+    .music-card {
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 10px 30px rgba(255, 255, 255, 0.12) !important;
+    }
+
+    @keyframes unlockPop {
+      0% {
+        transform: scale(0.96);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+
+      60% {
+        transform: scale(1.04);
+        box-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+      }
+
+      100% {
+        transform: scale(1.0);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    @keyframes neonPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+      }
+
+      50% {
+        box-shadow: 0 0 22px rgba(255, 255, 255, 0.55);
+      }
+    }
+
+    .option-unlocked {
+      border-color: rgba(255, 255, 255, 0.65) !important;
+      box-shadow: 0 0 18px rgba(255, 255, 255, 0.25) !important;
+      animation: optionGlow 1s ease !important;
+    }
+
+    @keyframes optionGlow {
+      0% {
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+
+      50% {
+        box-shadow: 0 0 22px rgba(255, 255, 255, 0.45);
+      }
+
+      100% {
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    .modal-content h2 {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 24px rgba(255, 255, 255, 0.35) !important;
+    }
+
+    .option h3 {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 24px rgba(255, 255, 255, 0.35) !important;
+    }
+
+    .option {
+      background: linear-gradient(180deg, #0f0f0f 0%, #121212 100%) !important;
+      border-color: rgba(255, 255, 255, 0.18) !important;
+      box-shadow: 0 0 16px rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .project-card .thumb {
+      background-color: #1a1a1a;
+      transition: transform 0.3s ease;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .certificate-card .thumb {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06)) !important;
+      box-shadow: inset 0 0 16px rgba(255, 255, 255, 0.12) !important;
+      color: #fff !important;
+    }
+
+    .logo .neon {
+      color: #00ffd5 !important;
+      text-shadow: 0 0 8px #00ffd5, 0 0 16px #00ffd5, 0 0 32px #00ffd5 !important;
+    }
+
+    .question-title {
+      color: #fff !important;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9),
+        0 0 16px rgba(255, 255, 255, 0.6),
+        0 0 24px rgba(255, 255, 255, 0.35) !important;
+    }
+
+    /* Responsivo: tablets até desktops pequenos */
+    @media (max-width: 1024px) {
+      .nav-inner {
+        padding: 10px 18px;
+      }
+
+      .nav-links a {
+        margin-left: 16px;
+      }
+
+      .typing {
+        font-size: 3em;
+      }
+
+      .intro {
+        font-size: 1.8em;
+      }
+
+      .bio {
+        font-size: 1em;
+      }
+
+      .avatar img {
+        max-width: 640px;
+      }
+
+      .services {
+        margin-top: 160px;
+        padding: 110px 0;
+      }
+
+      #certificates {
+        margin-top: 180px;
+        padding: 110px 0;
+      }
+
+      .projects {
+        margin-top: 180px;
+        padding: 110px 0;
+      }
+    }
+
+    /* Responsivo: mobile e tablets pequenos */
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding: 10px 14px;
+      }
+
+      .logo {
+        font-size: 1.3em;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        row-gap: 6px;
+      }
+
+      .nav-links a {
+        margin-left: 12px;
+        font-size: 0.95em;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 72px;
+        padding-bottom: 80px;
+      }
+
+      .text {
+        padding-right: 0;
+        text-align: center;
+      }
+
+      .intro {
+        font-size: 1.6em;
+      }
+
+      .typing {
+        font-size: 2.4em;
+      }
+
+      .bio {
+        font-size: 0.98em;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .social {
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .social img {
+        width: 28px;
+        height: 28px;
+      }
+
+      .avatar img {
+        max-width: 420px;
+        margin-top: 24px;
+        margin-left: 20px;
+      }
+
+      #david {
+        margin-top: 80px;
+      }
+
+      .about {
+        padding: 72px 0;
+      }
+
+      .about-inner {
+        gap: 40px;
+        justify-content: center;
+      }
+
+      .about-text h2 {
+        font-size: 1.8em;
+      }
+
+      .about-text h3 {
+        font-size: 1.2em;
+      }
+
+      .services {
+        margin-top: 120px;
+        padding: 96px 0;
+      }
+
+      .services-title {
+        font-size: 2em;
+        margin-bottom: 36px;
+      }
+
+      .services-grid {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .service-card {
+        padding: 24px 16px;
+      }
+
+      .projects {
+        margin-top: 140px;
+        padding: 96px 0;
+      }
+
+      .projects-grid {
+        width: 94%;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      #certificates {
+        margin-top: 140px;
+        padding: 96px 0;
+      }
+
+      .certificates-grid {
+        width: 94%;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      #curiosidade {
+        margin-top: 160px;
+        padding: 84px 0;
+      }
+
+      .curiosity-wrap {
+        padding: 0 12px;
+      }
+
+      .curiosity-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+      .curiosity-content {
+        text-align: center;
+      }
+
+      .curiosity-controls {
+        justify-content: center;
+      }
+
+      .curiosity-avatar img {
+        max-width: 320px;
+      }
+
+      /* Botões cheios no mobile para facilitar toque */
+      .actions .btn,
+      .about-actions .btn {
+        width: 100%;
+        max-width: 420px;
+      }
+
+      /* Modais mais confortáveis no mobile */
+      .modal-content {
+        width: 94%;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 20px;
+      }
+
+      .option {
+        padding: 12px;
+      }
+
+      /* Player de música ocupa a largura */
+      .music-card {
+        right: 10px;
+        bottom: 10px;
+        width: calc(100% - 20px);
+      }
+
+      .toast-container {
+        right: 10px;
+        bottom: 10px;
+      }
+    }
+
+    /* Responsivo: mobile pequeno */
+    @media (max-width: 480px) {
+      .nav-inner {
+        padding: 8px 10px;
+      }
+
+      .nav-links a {
+        margin-left: 10px;
+        font-size: 0.9em;
+      }
+
+      .intro {
+        font-size: 1.4em;
+      }
+
+      .typing {
+        font-size: 2em;
+      }
+
+      .bio {
+        font-size: 0.95em;
+      }
+
+      .avatar img {
+        max-width: 320px;
+      }
+
+      .services-title,
+      .projects-title,
+      .certificates-title,
+      .curiosity-title {
+        font-size: 1.7em;
+      }
+
+      .project-card .thumb {
+        height: 120px;
+        font-size: 2em;
+      }
+
+      .certificate-card .thumb {
+        width: 56px;
+        height: 56px;
+        font-size: 1.4em;
+      }
+    }
+
+    /* Responsivo: mobile muito pequeno */
+    @media (max-width: 360px) {
+      .nav-links a {
+        margin-left: 8px;
+        font-size: 0.86em;
+      }
+
+      .intro {
+        font-size: 1.25em;
+      }
+
+      .typing {
+        font-size: 1.8em;
+      }
+
+      .avatar img {
+        max-width: 280px;
+      }
+
+      .social img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    /* Acessibilidade: reduzir animações se preferido */
+    @media (prefers-reduced-motion: reduce) {
+
+      .avatar img,
+      .curiosity-avatar img {
+        animation: none !important;
+      }
+
+      .unlock-anim,
+      .option-unlocked {
+        animation: none !important;
+      }
+
+      .toast {
+        animation: none !important;
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .intro,
+      .typing,
+      .bio {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body id="topo">
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">nevext <span class="neon">PRODA</span></div>
+      <div class="nav-links">
+        <a href="#topo">Top</a>
+        <a href="#david">Dave Neves</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a>
+        <a href="#curiosidade">Curiosity</a>
+        <a href="#" id="langToggle" aria-label="Toggle language">PT-BR</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="text">
+      <div class="intro">Hey, I'm <span>Dave</span></div>
+      <div class="typing">I'm <span id="changing-word"></span></div>
+      <p class="bio">
+        Hello and welcome to my portfolio!<br>
+        I'm a <span class="neon-phrase">Computer Science student</span> pursuing my first degree, passionate<br>about
+        technology and innovation. Currently, I<br>work at the <span class="neon-phrase">Eldorado
+          Research<br>Institute</span>, where I contribute to exciting and impactful projects.<br>
+        🇧🇷 <span class="neon-phrase">Based in Manaus, Brazil</span>, I'm also a <span class="neon-phrase">content
+          creator</span> on TikTok<br>and YT and soon, I’ll be streaming live on Twitch, YT, and TikTok.<br>
+        My <span class="neon-phrase">availability</span> is in the <span class="neon-phrase">afternoon.</span><br>
+        This portfolio is <span class="neon-phrase">constantly evolving</span>, so stay tuned for updates and
+        new<br>content!
+      </p>
+      <div class="actions">
+        <a class="btn" href="https://www.youtube.com/watch?v=_RAKIx9kBYM" target="_blank" id="historyBtn">Site
+          History</a>
+        <a class="btn btn-outline" href="#david">About Me</a>
+      </div>
+      <div class="social">
+        <a href="https://www.instagram.com/nevexttv/" aria-label="Instagram" target="_blank" rel="noopener">
+          <img src="img/instagrampng.png" alt="Instagram">
+        </a>
+        <a href="https://github.com/nevext" aria-label="GitHub" target="_blank" rel="noopener">
+          <img src="img/githubpng.png" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com/in/nevesxt/" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <img src="img/linkedinpng.webp" alt="LinkedIn">
+        </a>
+        <a href="https://www.youtube.com/@NevextTV" aria-label="YouTube" target="_blank" rel="noopener">
+          <img src="img/youtubepng.png" alt="YouTube">
+        </a>
+      </div>
+    </div>
+    <div class="avatar">
+      <img src="img/Euarte.png" alt="Photo of Dave">
+    </div>
+  </div>
+
+  <section id="david" class="about">
+    <div class="about-inner">
+      <div class="about-avatar">
+        <img src="img/fotominha.png" alt="Foto de Dave">
+      </div>
+      <div class="about-text">
+        <h2>nevext</h2>
+        <h3>Hello, I'm Dave Neves</h3>
+        <p>I'm Dave Neves, 23 years old, originally from Manaus, Amazonas, Brazil.</p>
+        <p>I'm currently pursuing my first undergraduate degree in Computer Science at <a class="neon-white"
+            href="https://ciesa.br/" target="_blank" rel="noopener">CIESA</a>, where I'm in the second semestre.</p>
+        <p>I attend evening classes from 6:20 PM to 10:00 PM, and I'm currently learning<br>Calculus II, gaining
+          foundational knowledge in Python and C, and participating in extension activities.</p>
+        <p>I work at the <a class="neon-white" href="https://www.eldorado.org.br/" target="_blank"
+            rel="noopener">Eldorado Research Institute</a> in Manaus, a multinational company,<br>where I serve as a
+          Technical Assistant in the software department.</p>
+        <p>Outside of tech, I also help my family with their food business a responsabilidade I take pride in.</p>
+        <p>My life goal is to achieve financial independence and eventually create opportunities by<br>generating jobs
+          for others in the future.</p>
+        <div class="about-actions">
+          <a href="https://www.youtube.com/watch?v=r_9Kf0D5BTs&list=RDEMr9ZkDmyg4Y39GwnbPKJlLA&index=2" class="btn"
+            target="_blank" rel="noopener">Top Song</a>
+          <a href="#importante" class="btn btn-outline">What Matters Most</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="musica" class="music-player">
+    <div class="music-card" id="musicCard">
+      <div class="music-info" style="grid-column: 1 / span 2;">
+        <h3>Top Song</h3>
+        <p>twenty one pilots Chlorine</p>
+      </div>
+      <div class="music-controls" style="grid-column: 2;">
+        <button id="musicPause" class="btn btn-outline">Pause</button>
+        <button id="musicClose" class="btn">Exit</button>
+      </div>
+      <audio id="musicAudio" preload="auto" src="audio/twenty one pilots - Chlorine.m4a"></audio>
+    </div>
+  </section>
+
+
+  <section id="projects" class="projects">
+    <div class="projects-inner">
+      <h2 class="projects-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="thumb" style="background-image: url('img/portfolio.png');"></div>
+          <h3 data-key="proj1Title">Portfolio Website</h3>
+          <p data-key="proj1Text">Personal portfolio built with responsive layout, animated sections, and contact form.
+          </p>
+          <a class="project-btn" href="#" target="_blank" rel="noopener">View Project</a>
+        </div>
+        <div class="project-card private-project"
+          data-msg="Projeto privado para a faculdade, quiser mais informações entrar em contato">
+          <div class="thumb" style="background-image: url('img/bemvindo.png');"></div>
+          <h3 data-key="projCiesaTitle">CIESA Welcome Site</h3>
+          <p data-key="projCiesaDesc">A welcome portal for new students at CIESA.</p>
+          <span class="project-btn">Private Project</span>
+        </div>
+        <div class="project-card private-project"
+          data-msg="Projeto privado para a faculdade, quiser mais informações entrar em contato">
+          <div class="thumb" style="background-image: url('img/validate.png');"></div>
+          <h3 data-key="projValidateTitle">Validate</h3>
+          <p data-key="projValidateDesc">A tool for website testing and peer review (In development).</p>
+          <span class="project-btn">Private Project</span>
+        </div>
+        <div class="project-card private-project"
+          data-msg="Projeto privado para a faculdade, quiser mais informações entrar em contato">
+          <div class="thumb" style="background-image: url('img/glossary.png');"></div>
+          <h3 data-key="projGlossaryTitle">CIESA Glossary</h3>
+          <p data-key="projGlossaryDesc">Technical English glossary for instrumental English classes.</p>
+          <span class="project-btn">Private Project</span>
+        </div>
+        <div class="project-card private-project"
+          data-msg="Projeto privado para a faculdade, quiser mais informações entrar em contato">
+          <div class="thumb" style="background-image: url('img/ACTV.png');"></div>
+          <h3 data-key="projActvTitle">ACTV</h3>
+          <p data-key="projActvDesc">A complex activity tracking application (In development).</p>
+          <span class="project-btn">Private Project</span>
+        </div>
+        <div class="project-card">
+          <div class="thumb" style="background-image: url('img/youtubeprevia.png');"></div>
+          <h3 data-key="projYoutubeTitle">YouTube Channel</h3>
+          <p data-key="projYoutubeDesc">Content creation and networking with tech companies.</p>
+          <a class="project-btn" href="https://www.youtube.com/@nevext" target="_blank" rel="noopener">View Channel</a>
+        </div>
+        <div class="project-card">
+          <div class="thumb" style="background-image: url('img/tiktokprevia.png');"></div>
+          <h3 data-key="projTiktokTitle">TikTok</h3>
+          <p data-key="projTiktokDesc">Audience management and social media insights.</p>
+          <a class="project-btn" href="https://www.tiktok.com/@nevext" target="_blank" rel="noopener">View TikTok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates" class="certificates">
+    <div class="certificates-inner">
+      <h2 class="certificates-title">Certificates</h2>
+      <div class="certificates-grid">
+        <div class="certificate-card" id="csCertCard">
+          <div class="thumb">🎓</div>
+          <h4 id="csCertTitle" class="cert-click">Computer Science - CIESA </h4>
+          <p>In progress degree in Computer Science.</p>
+          <div class="progress" aria-label="Progresso 27%">
+            <div class="progress-bar" style="width:27%"></div>
+          </div>
+          <span class="status">27%</span>
+        </div>
+        <div class="certificate-card" id="engCertCard">
+          <div class="thumb">🇺🇸</div>
+          <h4 id="engCertTitle" class="cert-click">Advanced and Business English - ICBEU</h4>
+          <p>In progress Advanced and Business English course.</p>
+          <div class="progress" aria-label="Progress 21%">
+            <div class="progress-bar" style="width:21%"></div>
+          </div>
+          <span class="status" title="Waiting for the next class">21%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="curiosidade" class="curiosity-section">
+    <div class="curiosity-inner">
+      <h2 class="curiosity-title">Curiosities</h2>
+      <div class="curiosity-wrap">
+        <div class="curiosity-card" id="curiosityCard">
+          <div class="curiosity-avatar">
+            <img id="curiosityImg" src="img/corinthians gato.jpg" alt="Curiosity image">
+          </div>
+          <div class="curiosity-content">
+            <h4 id="curiosityTitle">Footbal</h4>
+            <h5 id="curiositySubtitle">Corinthians</h5>
+            <p id="curiosityText">In 2012 we conquered the world and I hope that one day we will conquer it again.</p>
+            <div class="curiosity-controls"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="orderModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Choose your website level</h2>
+      <div class="option" id="basicOption">
+        <h3>Basic</h3>
+        <p>Example: Personal portfolio or landing page.<br>Difficulty: 7/10<br>Average time: a combination of design and
+          development.</p>
+        <a class="btn neon" href="mailto:nevext@outlook.com?subject=Website%20Level%20Basic">Send me an email</a>
+      </div>
+      <div class="option" id="mediumOption">
+        <h3>Medium</h3>
+        <p>Example: Small business website with multiple pages and contact form.<br>Difficulty: 10/10<br>Average time: a
+          combination of design and development.</p>
+        <button class="btn locked" disabled>🔒 Locked</button>
+      </div>
+      <div class="option" id="proOption">
+        <h3>Professional</h3>
+        <p>Example: E-commerce platform or web application with authentication.<br>Difficulty: 11/10<br>Average time: a
+          combination of design and development.</p>
+        <button class="btn locked" disabled>🔒 Locked</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="socialModal">
+    <div class="modal-content">
+      <span class="close" id="closeSocial">&times;</span>
+      <h2>Choose your social media management level</h2>
+      <div class="option" id="basicSocial">
+        <h3>Basic Package</h3>
+        <p>Example: Small business or personal profile.<br>Difficulty: 3/10<br>Contract: Simple.</p>
+        <a class="btn neon" href="mailto:nevext@outlook.com?subject=Social%20Media%20Management%20Basic">Send me an
+          email</a>
+        <button class="read-more" data-target="socialBasicInfo"></button>
+        <div class="more-info" id="socialBasicInfo">
+          Ideal for individuals or small businesses starting out. Includes content scheduling, basic design templates,
+          and engagement monitoring.
+        </div>
+      </div>
+      <div class="option" id="proSocial">
+        <h3>Professional Package</h3>
+        <p>Example: Growing brand with active audience.<br>Difficulty: 5/10<br>Contract: Simple.</p>
+        <button class="btn locked" disabled>🔒 Locked</button>
+        <button class="read-more" data-target="socialProInfo" disabled></button>
+        <div class="more-info" id="socialProInfo">
+          Designed for brands with consistent posting needs. Includes tailored content creation, analytics reports, and
+          growth strategies.
+        </div>
+      </div>
+      <div class="option" id="premiumSocial">
+        <h3>Premium Package</h3>
+        <p>Example: Established brand with high engagement goals.<br>Difficulty: 7/10<br>Contract: Professional.</p>
+        <button class="btn locked" disabled>🔒 Locked</button>
+        <button class="read-more" data-target="socialPremiumInfo" disabled></button>
+        <div class="more-info" id="socialPremiumInfo">
+          Full-service management with advanced strategies, ad campaigns, influencer collaborations, and detailed
+          performance tracking.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="videoModal">
+    <div class="modal-content">
+      <span class="close" id="closeVideo">&times;</span>
+      <h2>Choose your video editing level</h2>
+      <div class="option" id="basicVideo">
+        <h3>Basic Package</h3>
+        <p>Example: Simple cuts, captions, basic transitions (1–2 videos).<br>Difficulty: 5/10<br>Average time: 3–7
+          days.</p>
+        <a class="btn neon" href="mailto:nevext@outlook.com?subject=Video%20Editing%20Basic">Send me an email</a>
+        <button class="read-more" data-target="videoBasicInfo"></button>
+        <div class="more-info" id="videoBasicInfo">Great for straightforward edits: trimming, basic color tweaks, simple
+          captions, and light sound polish.</div>
+      </div>
+      <div class="option" id="proVideo">
+        <h3>Professional Package</h3>
+        <p>Example: Advanced edits, motion graphics, sound design (2–4 videos).<br>Difficulty: 9/10<br>Average time: 1–2
+          weeks.</p>
+        <button class="btn locked" disabled>🔒 Locked</button>
+        <button class="read-more" data-target="videoProInfo" disabled></button>
+        <div class="more-info" id="videoProInfo">Includes advanced transitions, animated lower-thirds, better color
+          grading and sound enhancement.</div>
+      </div>
+      <div class="option" id="premiumVideo">
+        <h3>Premium Package</h3>
+        <p>Example: Full storytelling, motion templates, heavy color grading (4+ videos).<br>Difficulty:
+          11/10<br>Average time: 2–4 weeks.</p>
+        <button class="btn locked" disabled>🔒 Locked</button>
+        <button class="read-more" data-target="videoPremiumInfo" disabled></button>
+        <div class="more-info" id="videoPremiumInfo">End‑to‑end editing with custom motion graphics, detailed grading,
+          and iterative feedback cycles.</div>
+      </div>
+      <div class="option" id="fixedVideo">
+        <h3>Fixed Editor Contract (Company or YouTuber)</h3>
+        <p>Ongoing partnership as a dedicated editor with agreed monthly deliverables and SLAs.<br>Difficulty:
+          10/10<br>Average time: Monthly contract.</p>
+        <a class="btn neon" href="mailto:nevext@outlook.com?subject=Video%20Editing%20Fixed%20Editor%20Contract">Send me
+          an email</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="csModal">
+    <div class="modal-content">
+      <span class="close" id="closeCs">&times;</span>
+      <h2>Contents learned</h2>
+      <div class="options-container">
+        <div class="option" id="basicCS">
+          <h3>Python</h3>
+          <p></p>
+          <div class="more-info" id="csBasicInfo">Great for straightforward edits: trimming, basic color tweaks, simple
+            captions, and light sound polish.</div>
+        </div>
+        <div class="option" id="proCS">
+          <h3>C</h3>
+          <p></p>
+        </div>
+        <div class="option" id="premiumCS">
+          <h3>Calculation I and II</h3>
+          <p></p>
+        </div>
+      </div>
+      <div class="option" id="fixedCS">
+        <h3>Prototipation</h3>
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="topSongModal">
+    <div class="modal-content">
+      <span class="close" id="closeTopSong">&times;</span>
+      <h2>Top Song</h2>
+      <div class="video-wrapper">
+        <iframe id="topSongFrame" src="https://www.youtube.com/embed/djV11Xbc914?rel=0" title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="question" id="topQ1" style="display:none;">
+        <p class="question-title">Já tinha ouvido?</p>
+        <div class="question-actions" id="q1Actions">
+          <button class="curiosity-btn" id="q1Yes">Sim</button>
+          <button class="curiosity-btn" id="q1No">Não</button>
+        </div>
+      </div>
+      <div class="question" id="topQ2" style="display:none;">
+        <p class="question-title">Gostou dela?</p>
+        <div class="question-actions" id="q2Actions">
+          <button class="curiosity-btn" id="q2Yes">Sim</button>
+          <button class="curiosity-btn" id="q2No">Não</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="csLearnedModal">
+    <div class="modal-content">
+      <span class="close" id="closeCsLearned">&times;</span>
+      <h2>Conteúdos de Ciência da Computação</h2>
+      <ul class="learned-list">
+        <li>Calculo I</li>
+        <li>Calculo II</li>
+        <li>Introdução a progamação em Python</li>
+        <li>Introdução a programação em C</li>
+        <li>logica de progamção</li>
+        <li>Desing Think</li>
+        <li>Lógica matematica</li>
+        <li>prototipação</li>
+        <li>Interação Homem Computador</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    window.words = [
+      "a Developer",
+      "a Content Creator",
+      "a Programmer",
+      "Dave Neves",
+      "nevext",
+      "student of Computer Science",
+      "Technical Aux in software in Eldorado",
+      "Brazilian"
+    ];
+    window.i = 0;
+    window.j = 0;
+    window.currentWord = "";
+    window.isDeleting = false;
+    const speed = 100;
+    const delay = 2000;
+    window.typeEffect = function typeEffect() {
+      const element = document.getElementById("changing-word");
+      if (!window.isDeleting && window.j <= window.words[window.i].length) {
+        window.currentWord = window.words[window.i].substring(0, window.j++);
+        element.textContent = window.currentWord;
+        setTimeout(window.typeEffect, speed);
+      } else if (window.isDeleting && window.j >= 0) {
+        window.currentWord = window.words[window.i].substring(0, window.j--);
+        element.textContent = window.currentWord;
+        setTimeout(window.typeEffect, speed / 2);
+      } else if (!window.isDeleting && window.j > window.words[window.i].length) {
+        window.isDeleting = true;
+        setTimeout(window.typeEffect, delay);
+      } else if (window.isDeleting && window.j < 0) {
+        window.isDeleting = false;
+        window.i = (window.i + 1) % window.words.length;
+        setTimeout(window.typeEffect, speed);
+      }
+    };
+    window.typeEffect();
+  </script>
+
+  <script>
+    (function () {
+      function wrapLettersIn(root) {
+        if (!root) return;
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+        const nodes = [];
+        let n;
+        while ((n = walker.nextNode())) {
+          if (!n.nodeValue || n.nodeValue.trim() === '') continue;
+          nodes.push(n);
+        }
+        nodes.forEach(node => {
+          const frag = document.createDocumentFragment();
+          const words = node.nodeValue.split(/(\s+)/);
+          words.forEach(word => {
+            if (word.trim() === '') {
+              frag.appendChild(document.createTextNode(word));
+            } else {
+              const wordSpan = document.createElement('span');
+              wordSpan.className = 'word';
+              for (const ch of word) {
+                const span = document.createElement('span');
+                span.className = 'letter';
+                span.textContent = ch;
+                wordSpan.appendChild(span);
+              }
+              frag.appendChild(wordSpan);
+            }
+          });
+          node.parentNode.replaceChild(frag, node);
+        });
+      }
+      const bio = document.querySelector('.bio');
+      if (bio) wrapLettersIn(bio);
+      document.querySelectorAll('.about-text p').forEach(p => wrapLettersIn(p));
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const orderBtn = document.getElementById('orderBtn');
+      const modal = document.getElementById('orderModal');
+      const closeModal = document.getElementById('closeModal');
+      if (!orderBtn || !modal || !closeModal) return;
+      orderBtn.addEventListener('click', () => { modal.style.display = 'flex'; });
+      closeModal.addEventListener('click', () => { modal.style.display = 'none'; });
+      window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const socialBtn = document.getElementById('socialBtn');
+      const socialModal = document.getElementById('socialModal');
+      const closeSocial = document.getElementById('closeSocial');
+      if (!socialBtn || !socialModal || !closeSocial) return;
+      function unlockOption(optionId, mailtoHref) {
+        const opt = document.getElementById(optionId);
+        if (!opt) return;
+        const existingMailto = opt.querySelector('a.btn.neon');
+        if (existingMailto) return;
+        const lockedBtn = opt.querySelector('.btn.locked');
+        if (lockedBtn) {
+          const a = document.createElement('a');
+          a.className = 'btn neon unlock-anim';
+          a.href = mailtoHref;
+          const currentLang = (localStorage.getItem('lang') === 'pt' || document.documentElement.lang.startsWith('pt')) ? 'pt' : 'en';
+          const sendLabel = currentLang === 'pt' ? 'Enviar e‑mail' : 'Send me an email';
+          a.textContent = sendLabel + ' 🔓';
+          lockedBtn.replaceWith(a);
+          opt.classList.add('option-unlocked');
+          setTimeout(() => opt.classList.remove('option-unlocked'), 1200);
+        }
+        const rm = opt.querySelector('.read-more');
+        if (rm) { rm.disabled = false; rm.removeAttribute('disabled'); }
+      }
+      socialBtn.addEventListener('click', () => {
+        socialModal.style.display = 'flex';
+        setTimeout(() => {
+          unlockOption('proSocial', 'mailto:nevext@outlook.com?subject=Social%20Media%20Management%20Professional');
+          unlockOption('premiumSocial', 'mailto:nevext@outlook.com?subject=Social%20Media%20Management%20Premium');
+        }, 320);
+      });
+      closeSocial.addEventListener('click', () => { socialModal.style.display = 'none'; });
+      window.addEventListener('click', (e) => { if (e.target === socialModal) socialModal.style.display = 'none'; });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const videoBtn = document.getElementById('videoBtn');
+      const videoModal = document.getElementById('videoModal');
+      const closeVideo = document.getElementById('closeVideo');
+      if (!videoBtn || !videoModal || !closeVideo) return;
+      function unlockOption(optionId, mailtoHref) {
+        const opt = document.getElementById(optionId);
+        if (!opt) return;
+        const existingMailto = opt.querySelector('a.btn.neon');
+        if (existingMailto) return;
+        const lockedBtn = opt.querySelector('.btn.locked');
+        if (lockedBtn) {
+          const a = document.createElement('a');
+          a.className = 'btn neon unlock-anim';
+          a.href = mailtoHref;
+          const currentLang = (localStorage.getItem('lang') === 'pt' || document.documentElement.lang.startsWith('pt')) ? 'pt' : 'en';
+          const sendLabel = currentLang === 'pt' ? 'Enviar e‑mail' : 'Send me an email';
+          a.textContent = sendLabel + ' 🔓';
+          lockedBtn.replaceWith(a);
+          opt.classList.add('option-unlocked');
+          setTimeout(() => opt.classList.remove('option-unlocked'), 1200);
+        }
+        const rm = opt.querySelector('.read-more');
+        if (rm) { rm.disabled = false; rm.removeAttribute('disabled'); }
+      }
+      videoBtn.addEventListener('click', () => {
+        videoModal.style.display = 'flex';
+        setTimeout(() => {
+          unlockOption('proVideo', 'mailto:nevext@outlook.com?subject=Video%20Editing%20Professional');
+          unlockOption('premiumVideo', 'mailto:nevext@outlook.com?subject=Video%20Editing%20Premium');
+        }, 320);
+      });
+      closeVideo.addEventListener('click', () => { videoModal.style.display = 'none'; });
+      window.addEventListener('click', (e) => { if (e.target === videoModal) videoModal.style.display = 'none'; });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const title = document.getElementById('csCertTitle');
+      const csModal = document.getElementById('csModal');
+      const closeCs = document.getElementById('closeCs');
+      if (!title || !csModal || !closeCs) return;
+      title.addEventListener('click', () => { csModal.style.display = 'flex'; });
+      closeCs.addEventListener('click', () => { csModal.style.display = 'none'; });
+      window.addEventListener('click', (e) => { if (e.target === csModal) csModal.style.display = 'none'; });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const proda = document.querySelector('.logo .neon');
+      if (!proda) return;
+      function ensureToastContainer() {
+        let c = document.querySelector('.toast-container');
+        if (!c) {
+          c = document.createElement('div');
+          c.className = 'toast-container';
+          document.body.appendChild(c);
+        }
+        return c;
+      }
+      function showTimidToast(message) {
+        const c = ensureToastContainer();
+        const t = document.createElement('div');
+        t.className = 'toast toast--timid';
+        t.textContent = message;
+        c.appendChild(t);
+        setTimeout(() => t.remove(), 2000);
+      }
+      proda.addEventListener('click', () => { showTimidToast("Developer team I'm going to create positions open"); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const btn = document.querySelector('.about-actions a.btn.btn-outline[href="#importante"]');
+      if (!btn) return;
+      function ensureToastContainer() {
+        let c = document.querySelector('.toast-container');
+        if (!c) {
+          c = document.createElement('div');
+          c.className = 'toast-container';
+          document.body.appendChild(c);
+        }
+        return c;
+      }
+      function showTimidToast(message) {
+        const c = ensureToastContainer();
+        const t = document.createElement('div');
+        t.className = 'toast toast--timid';
+        t.textContent = message;
+        c.appendChild(t);
+        setTimeout(() => t.remove(), 2000);
+      }
+      btn.addEventListener('click', (e) => { e.preventDefault(); showTimidToast('Family'); });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById('langToggle');
+      function setText(sel, text) { const el = document.querySelector(sel); if (el) el.textContent = text; }
+      function setHTML(sel, html) { const el = document.querySelector(sel); if (el) el.innerHTML = html; }
+      function unwrapLetters(root) {
+        if (!root) return;
+        root.querySelectorAll('.letter').forEach(span => {
+          const text = document.createTextNode(span.textContent);
+          span.replaceWith(text);
+        });
+      }
+      function wrapLettersIn(root) {
+        if (!root) return;
+        unwrapLetters(root);
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+        const nodes = [];
+        let n;
+        while ((n = walker.nextNode())) {
+          if (!n.nodeValue || n.nodeValue.trim() === '') continue;
+          nodes.push(n);
+        }
+        nodes.forEach(node => {
+          const frag = document.createDocumentFragment();
+          const words = node.nodeValue.split(/(\s+)/);
+          words.forEach(word => {
+            if (word.trim() === '') {
+              frag.appendChild(document.createTextNode(word));
+            } else {
+              const wordSpan = document.createElement('span');
+              wordSpan.className = 'word';
+              for (const ch of word) {
+                const span = document.createElement('span');
+                span.className = 'letter';
+                span.textContent = ch;
+                wordSpan.appendChild(span);
+              }
+              frag.appendChild(wordSpan);
+            }
+          });
+          node.parentNode.replaceChild(frag, node);
+        });
+      }
+      function wrapAllHoverTexts() {
+        const bio = document.querySelector('.bio');
+        if (bio) wrapLettersIn(bio);
+        document.querySelectorAll('.about-text p').forEach(p => wrapLettersIn(p));
+      }
+      const enWords = [
+        "Dave Neves",
+        "nevext",
+        "Computer Science",
+        "Brazilian"
+      ];
+      const ptWords = [
+        "Designer",
+        "Desenvolvedor",
+        "Programador",
+        "Dave Neves",
+        "nevext",
+        "Cientista da Computação",
+        "Software no Eldorado",
+        "Brasileiro"
+      ];
+      const dict = {
+        en: {
+          lang: 'en-US',
+          title: 'Dave | Portfolio',
+          navTop: 'Top',
+          navAbout: 'Dave Neves',
+          navProjects: 'Projects',
+          navCertificates: 'Certificates',
+          navCuriosity: 'Curiosity',
+          toggleLabel: 'PT-BR',
+          introHTML: `Hey, I'm <span>Dave</span>`,
+          historyBtn: 'Site History',
+          aboutMeBtn: 'About Me',
+          bioHTML: `Hello and welcome to my portfolio!<br>
+        I'm a <span class="neon-phrase">Computer Science student</span> pursuing my first degree, passionate about technology and innovation. Currently, I work at the <span class="neon-phrase">Eldorado Research Institute</span> where I contribute to exciting and impactful projects.<br>
+        🇧🇷 <span class="neon-phrase">Based in Manaus, Brazil</span>, I'm also a <span class="neon-phrase">content creator</span> on TikTok and YT and soon, I’ll be streaming live on Twitch, YT, and TikTok.<br>
+        My <span class="neon-phrase">availability</span> is in the <span class="neon-phrase">afternoon.</span><br>
+        This portfolio is <span class="neon-phrase">constantly evolving</span>, so stay tuned for updates and new content!`,
+          aboutH3: "Hello, I'm Dave Neves",
+          aboutP1: "I'm Dave Neves, 23 years old, originally from Manaus, Amazonas, Brazil.",
+          aboutP2HTML: `I'm currently pursuing my first undergraduate degree in Computer Science at <a class="neon-white" href="https://ciesa.br/" target="_blank" rel="noopener">CIESA</a>, where I'm in the second semestre.`,
+          aboutP3: "I attend evening classes from 6:20 PM to 10:00 PM, and I'm currently learning Calculus II, gaining foundational knowledge in Python and C, and participating in extension activities.",
+          aboutP4HTML: `I work at the <a class="neon-white" href="https://www.eldorado.org.br/" target="_blank" rel="noopener">Eldorado Research Institute</a> in Manaus, a multinational company, where I serve as a Technical Assistant in the software department.`,
+          aboutP5: "Outside of tech, I also help my family with their food business a responsabilidade I take pride in.",
+          aboutP6: "My life goal is to achieve financial independence and eventually create opportunities by generating jobs for others in the future.",
+          aboutTopSong: 'Top Song',
+          aboutMatters: 'What Matters Most',
+          projectsTitle: 'Projects',
+          proj1Title: 'Portfolio Website',
+          proj1Text: 'Personal portfolio built with responsive layout, animated sections, and contact form.',
+          proj1Btn: 'View Project',
+          projCiesaTitle: 'CIESA Welcome Site',
+          projCiesaDesc: 'A welcome portal for new students at CIESA.',
+          projValidateTitle: 'Validate',
+          projValidateDesc: 'A tool for website testing and peer review (In development).',
+          projGlossaryTitle: 'CIESA Glossary',
+          projGlossaryDesc: 'Technical English glossary for instrumental English classes.',
+          projActvTitle: 'ACTV',
+          projActvDesc: 'A complex activity tracking application (In development).',
+          projYoutubeTitle: 'YouTube Channel',
+          projYoutubeDesc: 'Content creation and networking with tech companies.',
+          projTiktokTitle: 'TikTok',
+          projTiktokDesc: 'Audience management and social media insights.',
+          projViewChannel: 'View Channel',
+          projViewTiktok: 'View TikTok',
+          projPrivate: 'Private Project',
+          csTitle: 'Computer Science - CIESA',
+          csDesc: 'In progress degree in Computer Science.',
+          engDesc: 'In progress Advanced and Business English course.',
+          engTooltip: 'Waiting for the next class',
+          curTitle: 'Curiosities',
+          curItemTitle: 'Footbal',
+          curItemSub: 'Corinthians',
+          curItemText: 'In 2012 we conquered the world and I hope that one day we will conquer it again.'
+        },
+        pt: {
+          lang: 'pt-BR',
+          title: 'Dave | Portfólio',
+          navTop: 'Topo',
+          navAbout: 'Dave Neves',
+          navProjects: 'Projetos',
+          navCertificates: 'Certificados',
+          navCuriosity: 'Curiosidades',
+          toggleLabel: 'EN',
+          introHTML: `Olá, eu sou o <span>Dave</span>`,
+          historyBtn: 'Histórico do Site',
+          aboutMeBtn: 'Sobre Mim',
+          bioHTML: `Olá e bem-vindo ao meu portfólio!<br>
+        Sou <span class="neon-phrase">estudante de Ciência da Computação</span> cursando minha primeira graduação, apaixonado por tecnologia e inovação. Atualmente, trabalho no <span class="neon-phrase">Instituto de Pesquisas Eldorado</span> onde contribuo com projetos empolgantes e de impacto.<br>
+        🇧🇷 <span class="neon-phrase">Baseado em Manaus, Brasil</span>, também sou <span class="neon-phrase">criador de conteúdo</span> no TikTok e YT e em breve estarei transmitindo ao vivo na Twitch, YT e TikTok.<br>
+        Minha <span class="neon-phrase">disponibilidade</span> é no <span class="neon-phrase">período da tarde.</span><br>
+        Este portfólio está <span class="neon-phrase">em constante evolução</span>, então fique de olho nas novidades!`,
+          aboutH3: "Olá, eu sou o Dave Neves",
+          aboutP1: "Sou o Dave Neves, 23 anos, nascido em Manaus, Amazonas, Brasil.",
+          aboutP2HTML: `Atualmente curso minha primeira graduação em Ciência da Computação no <a class="neon-white" href="https://ciesa.br/" target="_blank" rel="noopener">CIESA</a>, onde estou no segundo semestre.`,
+          aboutP3: "Curso no período da noite, das 18:20 às 22:00. No momento, estudo Cálculo II, fundamentos de Python e C, e participo de atividades de extensão.",
+          aboutP4HTML: `Trabalho no <a class="neon-white" href="https://www.eldorado.org.br/" target="_blank" rel="noopener">Instituto de Pesquisas Eldorado</a> em Manaus, multinacional onde atuo como Auxiliar Técnico na área de software.`,
+          aboutP5: "Fora da área de tecnologia, também ajudo minha família no negócio de alimentação uma responsabilidade da qual me orgulho.",
+          aboutP6: "Meu objetivo de vida é alcançar independência financeira e, no futuro, gerar oportunidades criando empregos.",
+          aboutTopSong: 'Música do Momento',
+          aboutMatters: 'O que mais importa',
+          projectsTitle: 'Projetos',
+          proj1Title: 'Site Portfólio',
+          proj1Text: 'Portfólio pessoal com layout responsivo, animações e formulário de contato.',
+          proj1Btn: 'Ver Projeto',
+          projCiesaTitle: 'Site de Boas-vindas CIESA',
+          projCiesaDesc: 'Portal de boas-vindas para novos alunos do CIESA.',
+          projValidateTitle: 'Validate',
+          projValidateDesc: 'Ferramenta de testes de sites e revisão por colegas (Em desenvolvimento).',
+          projGlossaryTitle: 'Glossário CIESA',
+          projGlossaryDesc: 'Glossário técnico de inglês para aulas de inglês instrumental.',
+          projActvTitle: 'ACTV',
+          projActvDesc: 'Aplicação complexa de rastreamento de atividades (Em desenvolvimento).',
+          projYoutubeTitle: 'Canal no YouTube',
+          projYoutubeDesc: 'Criação de conteúdo e networking com empresas de tecnologia.',
+          projTiktokTitle: 'TikTok',
+          projTiktokDesc: 'Gestão de público e insights de redes sociais.',
+          projViewChannel: 'Ver Canal',
+          projViewTiktok: 'Ver TikTok',
+          projPrivate: 'Projeto Privado',
+          certsTitle: 'Certificados',
+          csTitle: 'Ciência da Computação - CIESA',
+          csDesc: 'Graduação em Ciência da Computação em andamento.',
+          engDesc: 'Em andamento Curso de Inglês Avançado e de Negócios.',
+          engTooltip: 'Aguardando a próxima aula',
+          curTitle: 'Curiosidades',
+          curItemTitle: 'Futebol',
+          curItemSub: 'Corinthians',
+          curItemText: 'Em 2012 conquistamos o mundo e espero que um dia conquistemos novamente.'
+        }
+      };
+      function applyLang(lang) {
+        const t = dict[lang];
+        document.documentElement.lang = t.lang;
+        document.title = t.title;
+        setText('.nav-links a[href="#topo"]', t.navTop);
+        setText('.nav-links a[href="#david"]', t.navAbout);
+        setText('.nav-links a[href="#services"]', t.navServices);
+        setText('.nav-links a[href="#projects"]', t.navProjects);
+        setText('.nav-links a[href="#certificates"]', t.navCertificates);
+        setText('.nav-links a[href="#curiosidade"]', t.navCuriosity);
+        if (toggle) toggle.textContent = t.toggleLabel;
+        setHTML('.intro', t.introHTML);
+        setText('#historyBtn', t.historyBtn);
+        const aboutBtn = document.querySelector('.actions .btn.btn-outline[href="#david"]');
+        if (aboutBtn) aboutBtn.textContent = t.aboutMeBtn;
+        setHTML('.bio', t.bioHTML);
+        setText('.about-text h3', t.aboutH3);
+        const aboutPs = document.querySelectorAll('.about-text p');
+        if (aboutPs[0]) aboutPs[0].textContent = t.aboutP1;
+        if (aboutPs[1]) aboutPs[1].innerHTML = t.aboutP2HTML;
+        if (aboutPs[2]) aboutPs[2].innerHTML = t.aboutP3;
+        if (aboutPs[3]) aboutPs[3].innerHTML = t.aboutP4HTML;
+        if (aboutPs[4]) aboutPs[4].textContent = t.aboutP5;
+        if (aboutPs[5]) aboutPs[5].textContent = t.aboutP6;
+        const topSongBtn = document.querySelector('.about-actions .btn[href^="https://www.youtube.com"]');
+        if (topSongBtn) topSongBtn.textContent = t.aboutTopSong;
+        const mattersBtn = document.querySelector('.about-actions .btn.btn-outline[href="#importante"]');
+        if (mattersBtn) mattersBtn.textContent = t.aboutMatters;
+        setText('.services-title', t.servicesTitle);
+        const svcCards = document.querySelectorAll('.services-grid .service-card');
+        if (svcCards[0]) {
+          // Sections removed
+        }
+        setText('.projects-title', t.projectsTitle);
+        setText('.project-card:nth-child(1) h3', t.proj1Title);
+        setText('.project-card:nth-child(1) p', t.proj1Text);
+        setText('.project-card:nth-child(1) .project-btn', t.proj1Btn);
+
+        setText('.project-card:nth-child(2) h3', t.projCiesaTitle);
+        setText('.project-card:nth-child(2) p', t.projCiesaDesc);
+        setText('.project-card:nth-child(2) .project-btn', t.projPrivate);
+
+        setText('.project-card:nth-child(3) h3', t.projValidateTitle);
+        setText('.project-card:nth-child(3) p', t.projValidateDesc);
+        setText('.project-card:nth-child(3) .project-btn', t.projPrivate);
+
+        setText('.project-card:nth-child(4) h3', t.projGlossaryTitle);
+        setText('.project-card:nth-child(4) p', t.projGlossaryDesc);
+        setText('.project-card:nth-child(4) .project-btn', t.projPrivate);
+
+        setText('.project-card:nth-child(5) h3', t.projActvTitle);
+        setText('.project-card:nth-child(5) p', t.projActvDesc);
+        setText('.project-card:nth-child(5) .project-btn', t.projPrivate);
+
+        setText('.project-card:nth-child(6) h3', t.projYoutubeTitle);
+        setText('.project-card:nth-child(6) p', t.projYoutubeDesc);
+        setText('.project-card:nth-child(6) .project-btn', t.projViewChannel);
+
+        setText('.project-card:nth-child(7) h3', t.projTiktokTitle);
+        setText('.project-card:nth-child(7) p', t.projTiktokDesc);
+        setText('.project-card:nth-child(7) .project-btn', t.projViewTiktok);
+        setText('.certificates-title', t.certsTitle);
+        setText('#csCertTitle', t.csTitle);
+        setText('#csCertCard p', t.csDesc);
+        const engCard = document.getElementById('engCertCard');
+        if (engCard) {
+          const p = engCard.querySelector('p');
+          const status = engCard.querySelector('.status');
+          if (p) p.textContent = t.engDesc;
+          if (status) status.setAttribute('title', t.engTooltip);
+        }
+        setText('.curiosity-title', t.curTitle);
+        setText('#curiosityTitle', t.curItemTitle);
+        setText('#curiositySubtitle', t.curItemSub);
+        setText('#curiosityText', t.curItemText);
+        wrapAllHoverTexts();
+        window.words = (lang === 'pt' ? ptWords : enWords);
+        window.i = 0;
+        window.j = 0;
+        window.isDeleting = false;
+        const el = document.getElementById('changing-word');
+        if (el) el.textContent = '';
+        if (typeof window.typeEffect === 'function') setTimeout(window.typeEffect, 50);
+        translateModals(lang);
+      }
+      function translateModals(lang) {
+        const isPT = (lang === 'pt');
+        const sendLabel = isPT ? 'Enviar e‑mail' : 'Send me an email';
+        const lockedTxt = isPT ? '🔒 Bloqueado' : '🔒 Locked';
+        const webH2 = document.querySelector('#orderModal h2');
+        if (webH2) webH2.textContent = isPT ? 'Escolha o nível do site' : 'Choose your website level';
+        const webBasic = document.getElementById('basicOption');
+        if (webBasic) {
+          const h3 = webBasic.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Básico' : 'Basic';
+          const p = webBasic.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: Portfólio pessoal ou landing page.<br>Dificuldade: 7/10<br>Tempo médio: combinação de design e desenvolvimento.'
+            : 'Example: Personal portfolio or landing page.<br>Difficulty: 7/10<br>Average time: a combination of design and development.';
+          const a = webBasic.querySelector('a.btn.neon'); if (a) a.textContent = sendLabel;
+        }
+        const webMed = document.getElementById('mediumOption');
+        if (webMed) {
+          const h3 = webMed.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Intermediário' : 'Medium';
+          const p = webMed.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: Site de pequeno negócio com várias páginas e formulário de contato.<br>Dificuldade: 10/10<br>Tempo médio: combinação de design e desenvolvimento.'
+            : 'Example: Small business website with multiple pages and contact form.<br>Difficulty: 10/10<br>Average time: a combination of design and development.';
+          const btn = webMed.querySelector('.btn.locked'); if (btn) btn.textContent = lockedTxt;
+        }
+        const webPro = document.getElementById('proOption');
+        if (webPro) {
+          const h3 = webPro.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Profissional' : 'Professional';
+          const p = webPro.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: E‑commerce ou aplicação web com autenticação.<br>Dificuldade: 11/10<br>Tempo médio: combinação de design e desenvolvimento.'
+            : 'Example: E-commerce platform or web application with authentication.<br>Difficulty: 11/10<br>Average time: a combination of design and development.';
+          const btn = webPro.querySelector('.btn.locked'); if (btn) btn.textContent = lockedTxt;
+        }
+        const socH2 = document.querySelector('#socialModal h2');
+        if (socH2) socH2.textContent = isPT ? 'Escolha seu nível de gerenciamento de redes sociais' : 'Choose your social media management level';
+        const socBasic = document.getElementById('basicSocial');
+        if (socBasic) {
+          const h3 = socBasic.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Pacote Básico' : 'Basic Package';
+          const p = socBasic.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: Pequeno negócio ou perfil pessoal.<br>Dificuldade: 3/10<br>Contrato: Simples.'
+            : 'Example: Small business or personal profile.<br>Difficulty: 3/10<br>Contract: Simple.';
+          const a = socBasic.querySelector('a.btn.neon'); if (a) a.textContent = sendLabel;
+        }
+        const socPro = document.getElementById('proSocial');
+        if (socPro) {
+          const h3 = socPro.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Pacote Profissional' : 'Professional Package';
+          const p = socPro.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: Marca em crescimento com público ativo.<br>Dificuldade: 5/10<br>Contrato: Simples.'
+            : 'Example: Growing brand with active audience.<br>Difficulty: 5/10<br>Contract: Simple.';
+          const btn = socPro.querySelector('.btn.locked'); if (btn) btn.textContent = lockedTxt;
+        }
+        const socPrem = document.getElementById('premiumSocial');
+        if (socPrem) {
+          const h3 = socPrem.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Pacote Premium' : 'Premium Package';
+          const p = socPrem.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: Marca consolidada com alta meta de engajamento.<br>Dificuldade: 7/10<br>Contrato: Profissional.'
+            : 'Example: Established brand with high engagement goals.<br>Difficulty: 7/10<br>Contract: Professional.';
+          const btn = socPrem.querySelector('.btn.locked'); if (btn) btn.textContent = lockedTxt;
+        }
+        const vidH2 = document.querySelector('#videoModal h2');
+        if (vidH2) vidH2.textContent = isPT ? 'Escolha o nível de edição de vídeo' : 'Choose your video editing level';
+        const vidBasic = document.getElementById('basicVideo');
+        if (vidBasic) {
+          const h3 = vidBasic.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Pacote Básico' : 'Basic Package';
+          const p = vidBasic.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: Cortes simples, legendas, transições básicas (1–2 vídeos).<br>Dificuldade: 5/10<br>Tempo médio: 3–7 dias.'
+            : 'Example: Simple cuts, captions, basic transitions (1–2 videos).<br>Difficulty: 5/10<br>Average time: 3–7 days.';
+          const a = vidBasic.querySelector('a.btn.neon'); if (a) a.textContent = sendLabel;
+        }
+        const vidPro = document.getElementById('proVideo');
+        if (vidPro) {
+          const h3 = vidPro.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Pacote Profissional' : 'Professional Package';
+          const p = vidPro.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: Edições avançadas, motion graphics, sound design (2–4 vídeos).<br>Dificuldade: 9/10<br>Tempo médio: 1–2 semanas.'
+            : 'Example: Advanced edits, motion graphics, sound design (2–4 videos).<br>Difficulty: 9/10<br>Average time: 1–2 weeks.';
+          const btn = vidPro.querySelector('.btn.locked'); if (btn) btn.textContent = lockedTxt;
+        }
+        const vidPrem = document.getElementById('premiumVideo');
+        if (vidPrem) {
+          const h3 = vidPrem.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Pacote Premium' : 'Premium Package';
+          const p = vidPrem.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Exemplo: Narrativa completa, templates de motion, grading pesado (4+ vídeos).<br>Dificuldade: 11/10<br>Tempo médio: 2–4 semanas.'
+            : 'Example: Full storytelling, motion templates, heavy color grading (4+ videos).<br>Difficulty: 11/10<br>Average time: 2–4 weeks.';
+          const btn = vidPrem.querySelector('.btn.locked'); if (btn) btn.textContent = lockedTxt;
+        }
+        const vidFixed = document.getElementById('fixedVideo');
+        if (vidFixed) {
+          const h3 = vidFixed.querySelector('h3'); if (h3) h3.textContent = isPT ? 'Contrato Fixo de Edição (Empresa ou YouTuber)' : 'Fixed Editor Contract (Company or YouTuber)';
+          const p = vidFixed.querySelector('p'); if (p) p.innerHTML = isPT
+            ? 'Parceria contínua como editor dedicado com entregas mensais e SLAs acordados.<br>Dificuldade: 10/10<br>Tempo médio: Contrato mensal.'
+            : 'Ongoing partnership as a dedicated editor with agreed monthly deliverables and SLAs.<br>Difficulty: 10/10<br>Average time: Monthly contract.';
+          const a = vidFixed.querySelector('a.btn.neon'); if (a) a.textContent = sendLabel;
+        }
+        const csModalH2 = document.querySelector('#csModal h2');
+        if (csModalH2) csModalH2.textContent = isPT ? 'Conteúdos aprendidos' : 'Contents learned';
+        const csBasic = document.querySelector('#basicCS h3'); if (csBasic) csBasic.textContent = isPT ? 'Python' : 'Python';
+        const csPro = document.querySelector('#proCS h3'); if (csPro) csPro.textContent = isPT ? 'C' : 'C';
+        const csPrem = document.querySelector('#premiumCS h3'); if (csPrem) csPrem.textContent = isPT ? 'Cálculo I e II' : 'Calculation I and II';
+        const csFixed = document.querySelector('#fixedCS h3'); if (csFixed) csFixed.textContent = isPT ? 'Prototipação' : 'Prototipation';
+      }
+      let current = (localStorage.getItem('lang') === 'pt') ? 'pt' : 'en';
+      applyLang(current);
+      if (toggle) {
+        toggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          current = (current === 'en') ? 'pt' : 'en';
+          localStorage.setItem('lang', current);
+          applyLang(current);
+        });
+      }
+    })();
+    (function () {
+      function showTimidToast(message) {
+        let c = document.querySelector('.toast-container');
+        if (!c) {
+          c = document.createElement('div');
+          c.className = 'toast-container';
+          document.body.appendChild(c);
+        }
+        const t = document.createElement('div');
+        t.className = 'toast toast--timid';
+        t.textContent = message;
+        c.appendChild(t);
+        setTimeout(() => t.remove(), 2500);
+      }
+      document.querySelectorAll('.private-project').forEach(card => {
+        card.addEventListener('click', (e) => {
+          e.preventDefault();
+          showTimidToast(card.getAttribute('data-msg'));
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

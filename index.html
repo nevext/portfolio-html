@@ -597,6 +597,36 @@
       }
     }
 
+    /* --- REVEAL ANIMATION --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* --- INITIAL LOAD ANIMATION --- */
+    @keyframes loadEntrance {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .load-anim {
+      opacity: 0;
+      animation: loadEntrance 0.8s ease-out forwards;
+    }
+
     .projects {
       margin-top: 220px;
       padding: 120px 0;
@@ -1637,23 +1667,24 @@
 <body id="topo">
   <nav>
     <div class="nav-inner">
-      <div class="logo">nevext <span class="neon">PRODA</span></div>
+      <div class="logo load-anim" style="animation-delay: 0.1s;">nevext <span class="neon">PRODA</span></div>
       <div class="nav-links">
-        <a href="#topo">Top</a>
-        <a href="#david">Dave Neves</a>
-        <a href="#projects">Projects</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#curiosidade">Curiosity</a>
-        <a href="#" id="langToggle" aria-label="Toggle language">PT-BR</a>
+        <a href="#topo" class="load-anim" style="animation-delay: 0.2s;">Top</a>
+        <a href="#david" class="load-anim" style="animation-delay: 0.3s;">Dave Neves</a>
+        <a href="#projects" class="load-anim" style="animation-delay: 0.4s;">Projects</a>
+        <a href="#certificates" class="load-anim" style="animation-delay: 0.5s;">Certificates</a>
+        <a href="#curiosidade" class="load-anim" style="animation-delay: 0.6s;">Curiosity</a>
+        <a href="#" id="langToggle" class="load-anim" style="animation-delay: 0.7s;"
+          aria-label="Toggle language">PT-BR</a>
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="container reveal">
     <div class="text">
-      <div class="intro">Hey, I'm <span>Dave</span></div>
-      <div class="typing">I'm <span id="changing-word"></span></div>
-      <p class="bio">
+      <div class="intro load-anim" style="animation-delay: 0.8s;">Hey, I'm <span>Dave</span></div>
+      <div class="typing load-anim" style="animation-delay: 1s;">I'm <span id="changing-word"></span></div>
+      <p class="bio load-anim" style="animation-delay: 1.2s;">
         Hello and welcome to my portfolio!<br>
         I'm a <span class="neon-phrase">Computer Science student</span> pursuing my first degree, passionate<br>about
         technology and innovation. Currently, I<br>work at the <span class="neon-phrase">Eldorado
@@ -1664,12 +1695,12 @@
         This portfolio is <span class="neon-phrase">constantly evolving</span>, so stay tuned for updates and
         new<br>content!
       </p>
-      <div class="actions">
+      <div class="actions load-anim" style="animation-delay: 1.4s;">
         <a class="btn" href="https://www.youtube.com/watch?v=_RAKIx9kBYM" target="_blank" id="historyBtn">Site
           History</a>
         <a class="btn btn-outline" href="#david">About Me</a>
       </div>
-      <div class="social">
+      <div class="social load-anim" style="animation-delay: 1.6s;">
         <a href="https://www.instagram.com/nevexttv/" aria-label="Instagram" target="_blank" rel="noopener">
           <img src="img/instagrampng.png" alt="Instagram">
         </a>
@@ -1684,12 +1715,12 @@
         </a>
       </div>
     </div>
-    <div class="avatar">
+    <div class="avatar load-anim" style="animation-delay: 1.8s;">
       <img src="img/Euarte.png" alt="Photo of Dave">
     </div>
   </div>
 
-  <section id="david" class="about">
+  <section id="david" class="about reveal">
     <div class="about-inner">
       <div class="about-avatar">
         <img src="img/fotominha.png" alt="Foto de Dave">
@@ -1732,52 +1763,52 @@
   </section>
 
 
-  <section id="projects" class="projects">
+  <section id="projects" class="projects reveal">
     <div class="projects-inner">
       <h2 class="projects-title">Projects</h2>
       <div class="projects-grid">
-        <div class="project-card">
+        <div class="project-card reveal">
           <div class="thumb" style="background-image: url('img/portfolio.png');"></div>
           <h3 data-key="proj1Title">Portfolio Website</h3>
           <p data-key="proj1Text">Personal portfolio built with responsive layout, animated sections, and contact form.
           </p>
           <a class="project-btn" href="#" target="_blank" rel="noopener">View Project</a>
         </div>
-        <div class="project-card private-project"
+        <div class="project-card private-project reveal"
           data-msg="Projeto privado para a faculdade, quiser mais informações entrar em contato">
           <div class="thumb" style="background-image: url('img/bemvindo.png');"></div>
           <h3 data-key="projCiesaTitle">CIESA Welcome Site</h3>
           <p data-key="projCiesaDesc">A welcome portal for new students at CIESA.</p>
           <span class="project-btn">Private Project</span>
         </div>
-        <div class="project-card private-project"
+        <div class="project-card private-project reveal"
           data-msg="Projeto privado para a faculdade, quiser mais informações entrar em contato">
           <div class="thumb" style="background-image: url('img/validate.png');"></div>
           <h3 data-key="projValidateTitle">Validate</h3>
           <p data-key="projValidateDesc">A tool for website testing and peer review (In development).</p>
           <span class="project-btn">Private Project</span>
         </div>
-        <div class="project-card private-project"
+        <div class="project-card private-project reveal"
           data-msg="Projeto privado para a faculdade, quiser mais informações entrar em contato">
           <div class="thumb" style="background-image: url('img/glossary.png');"></div>
           <h3 data-key="projGlossaryTitle">CIESA Glossary</h3>
           <p data-key="projGlossaryDesc">Technical English glossary for instrumental English classes.</p>
           <span class="project-btn">Private Project</span>
         </div>
-        <div class="project-card private-project"
+        <div class="project-card private-project reveal"
           data-msg="Projeto privado para a faculdade, quiser mais informações entrar em contato">
           <div class="thumb" style="background-image: url('img/ACTV.png');"></div>
           <h3 data-key="projActvTitle">ACTV</h3>
           <p data-key="projActvDesc">A complex activity tracking application (In development).</p>
           <span class="project-btn">Private Project</span>
         </div>
-        <div class="project-card">
+        <div class="project-card reveal">
           <div class="thumb" style="background-image: url('img/youtubeprevia.png');"></div>
           <h3 data-key="projYoutubeTitle">YouTube Channel</h3>
           <p data-key="projYoutubeDesc">Content creation and networking with tech companies.</p>
           <a class="project-btn" href="https://www.youtube.com/@nevext" target="_blank" rel="noopener">View Channel</a>
         </div>
-        <div class="project-card">
+        <div class="project-card reveal">
           <div class="thumb" style="background-image: url('img/tiktokprevia.png');"></div>
           <h3 data-key="projTiktokTitle">TikTok</h3>
           <p data-key="projTiktokDesc">Audience management and social media insights.</p>
@@ -1787,11 +1818,11 @@
     </div>
   </section>
 
-  <section id="certificates" class="certificates">
+  <section id="certificates" class="certificates reveal">
     <div class="certificates-inner">
       <h2 class="certificates-title">Certificates</h2>
       <div class="certificates-grid">
-        <div class="certificate-card" id="csCertCard">
+        <div class="certificate-card reveal" id="csCertCard">
           <div class="thumb">🎓</div>
           <h4 id="csCertTitle" class="cert-click">Computer Science - CIESA </h4>
           <p>In progress degree in Computer Science.</p>
@@ -1800,7 +1831,7 @@
           </div>
           <span class="status">27%</span>
         </div>
-        <div class="certificate-card" id="engCertCard">
+        <div class="certificate-card reveal" id="engCertCard">
           <div class="thumb">🇺🇸</div>
           <h4 id="engCertTitle" class="cert-click">Advanced and Business English - ICBEU</h4>
           <p>In progress Advanced and Business English course.</p>
@@ -1813,11 +1844,11 @@
     </div>
   </section>
 
-  <section id="curiosidade" class="curiosity-section">
+  <section id="curiosidade" class="curiosity-section reveal">
     <div class="curiosity-inner">
       <h2 class="curiosity-title">Curiosities</h2>
       <div class="curiosity-wrap">
-        <div class="curiosity-card" id="curiosityCard">
+        <div class="curiosity-card reveal" id="curiosityCard">
           <div class="curiosity-avatar">
             <img id="curiosityImg" src="img/corinthians gato.jpg" alt="Curiosity image">
           </div>
@@ -2622,6 +2653,31 @@
           e.preventDefault();
           showTimidToast(card.getAttribute('data-msg'));
         });
+      });
+    })();
+  </script>
+
+  <script>
+    /* --- REVEAL ON SCROLL LOGIC --- */
+    (function () {
+      const reveals = document.querySelectorAll('.reveal');
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          } else {
+            // Remove the active class when scrolling out to allow re-animation
+            entry.target.classList.remove('active');
+          }
+        });
+      }, {
+        threshold: 0.1, // Trigger slightly earlier
+        rootMargin: "0px 0px -50px 0px"
+      });
+
+      reveals.forEach(reveal => {
+        revealObserver.observe(reveal);
       });
     })();
   </script>

@@ -1,7 +1,5 @@
 # Dave Neves | Official Portfolio
 
-A high-performance, neon-themed personal portfolio designed to showcase projects, skills, and professional journey. This site features a premium "Proda" aesthetic with interactive animations and multi-language support.
-
 ![Portfolio Preview](img/portfolio.png)
 
 ## 🚀 Features
